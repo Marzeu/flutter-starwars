@@ -4,7 +4,7 @@ import 'package:starwars/movies.dart';
 
 class Swapi {
   Future<List<Movie>> getMovies() {
-    var url = "https://swapi.co/api/films/?format=json";
+    var url = "https://swapi.dev/api/films/?format=json";
     return http.get(url).then((response) {
       var content = json.decode(response.body);
       var movies = List<Movie>.from(content['results'].map((el) {
